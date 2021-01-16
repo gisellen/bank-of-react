@@ -4,7 +4,9 @@ export class AccountBalance extends Component {
     render() {
         return (
             <div>
-                Balance:{this.props.accountBalance}
+                Balance: ${this.props.accountBalance} <br />
+                Debit: ${this.props.debit} <br />
+                Credit:  ${this.props.credit}
             </div>
         )
     }
