@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import AccountBalance from './AccountBalance'
 
 export default class Credits extends Component {
   constructor(props) {
     super(props);
     this.state = {
       totCredit: 0,
+      debit: this.props.debit,
       credit: this.props.credit,
       isAdd: false,
       description: "",
@@ -22,6 +24,7 @@ export default class Credits extends Component {
   componentDidMount = () => {
     this.calcCredit();
   };
+
   calcCredit = () => {
     let amount = 0;
     this.state.credit.map((data) => {
@@ -31,6 +34,7 @@ export default class Credits extends Component {
       totCredit: amount,
     });
   };
+
   addCredit = () => {
     this.setState({
       isAdd: true,
@@ -90,6 +94,7 @@ export default class Credits extends Component {
           <h1>CREDITS</h1>
           <Link to="/">Home</Link>
           <h2>Total Credits: ${this.state.totCredit}</h2>
+          <AccountBalance credit={this.state.totCredit} debit={this.state.debit}/> <br />
           {this.state.credit.map((data) => (
             <div key={data.id}>
               Description: {data.description} <br />

@@ -73,8 +73,8 @@ debit = () => {
     const LogInComponent = () => (<Login user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props} />)
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance} debit={this.state.totDebit} credit={this.state.totCredit}/>);
     const UserProfileComponent = () => (<UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}/>)
-    const DebitsComponent = () => (<Debits debit={this.state.debit} />)
-    const CreditsComponent = () => (<Credits credit={this.state.credit} />)
+    const DebitsComponent = () => (<Debits debit={this.state.debit} credit={this.state.totCredit} />)
+    const CreditsComponent = () => (<Credits credit={this.state.credit} debit={this.state.totDebit} />)
     return (
       <Router>
         <Switch>

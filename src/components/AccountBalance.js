@@ -4,7 +4,7 @@ export class AccountBalance extends Component {
     render() {
         return (
             <div>
-                Balance: ${this.props.accountBalance} <br />
+                Account Balance: ${Math.round(((this.props.debit - this.props.credit) * 100) / 100).toFixed(2)} <br />
                 Debit: ${this.props.debit} <br />
                 Credit:  ${this.props.credit}
             </div>

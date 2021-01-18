@@ -8,6 +8,7 @@ export default class Debits extends Component {
     this.state = {
       totDebit: 0,
       debit: this.props.debit,
+      credit: this.props.credit,
       isAdd: false,
       description: "",
       date: "",
@@ -96,6 +97,7 @@ export default class Debits extends Component {
           <h1>DEBITS</h1>
           <Link to="/">Home</Link>
           <h2>Total Debits: ${this.state.totDebit}</h2>
+          <AccountBalance debit={this.state.totDebit} credit={this.state.credit}/> <br />
           {this.state.debit.map((data) => (
             <div key={data.id}>
               Description: {data.description} <br />
