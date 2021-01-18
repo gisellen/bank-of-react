@@ -5,6 +5,7 @@ export default class Credits extends Component {
     render() {
         return (
             <div>
+                <h1>CREDITS</h1>
                 <Link to="/">Home</Link>
                 {this.props.credit.map(data => (
                     <div key={data.id}>
